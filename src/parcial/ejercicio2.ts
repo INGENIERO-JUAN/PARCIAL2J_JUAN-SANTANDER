@@ -14,3 +14,4 @@ const tuplas: [number, string][] = [
 
 
 
+
