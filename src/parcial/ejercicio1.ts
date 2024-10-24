@@ -1,21 +1,17 @@
-// Función para verificar si un número es palíndromo
-// Verificar si un número es palíndromo
 function esPalindromo(numero: number): boolean {
-    let original = numero;
-    let invertido = 0;
-    while (numero > 0) {
-        invertido = invertido * 10 + (numero % 10);
-        numero = Math.floor(numero);
+    const strNumero = numero.toString();
+    const longitud = strNumero.length;
 
-        if (original===invertido){
-            return true
+    for (let i = 0; i < longitud; i++) {
+        if (strNumero[i] !== strNumero[longitud - 1 - i]) {
+            return false;
         }
-
-
     }
-  
+    return true;
 }
-  
 
-
- 
+for (let i = 1; i <= 1000; i++) {
+    if (esPalindromo(i)) {
+        console.log(i);
+    }
+}
